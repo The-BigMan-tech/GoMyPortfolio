@@ -1,0 +1,437 @@
+html,body {
+    margin:0;
+    background-color:rgb(43, 42, 51);
+    color:white;
+}
+.nav-flex {
+    position: sticky;       /* Make the navbar sticky */
+    top: 0;  
+    display:flex;
+    justify-content:start;
+    align-items: center;
+    border:1px solid black;
+    gap:30px;
+    padding:15px;
+    width:90rem;
+    z-index:10;
+    background-color:rgb(43, 42, 51);
+}
+nav > a {
+    font-size:16px;
+    padding:10px;
+    border-radius:10px;
+    color:white;
+    transition:all 0.3s ease-in;
+}
+nav:hover a{
+    color:rgb(137, 1, 1);
+    background-color: rgb(241, 168, 168);
+}
+nav > a:hover{
+    background-color:rgb(196, 40, 40);
+    color:white;
+    animation: nav-animation 0.2s ease-in 1 forwards;
+}
+@keyframes nav-animation {
+    from  {
+        transform:translateY(10px);
+    }
+    to {
+        transform:translateY(0);
+    }
+}
+.hero-flex {
+    padding-top:2rem;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    padding-left:2rem;
+    height:24rem;
+    color:white;
+    background-image:url(./images/stacked-waves-haikei\(3\).svg);
+}
+.hero-img {
+    position:absolute;
+    z-index:2;
+    right:0;
+    width:0;
+    opacity:0;
+    height:0;
+    border-radius:30px 0 0 30px;
+    animation:image-size 0.4s ease-in 5.5s 1 forwards
+}
+@keyframes image-size {
+    to {
+        opacity:1;
+        width:25rem;
+        height:24rem
+    }
+}
+.img-frame {
+    position:absolute;
+    z-index:1;
+    right:0;
+    top:0;
+    height:24rem;
+    width:25rem;
+    text-align:center;
+    border-radius:30px 0 0 30px;
+    border:1px solid red;
+    margin:0;
+    color:rgb(43, 42, 51);
+    background-color:rgb(43, 42, 51);
+}
+.nav-img {
+    height:2rem;
+    width:2rem
+}
+.hero-wave {
+    margin-top:1px;
+    margin:0;
+}
+
+.about-grid {
+    display:grid;
+    grid-template-columns:repeat(2,15rem);
+    gap:25rem;
+    position:relative;
+    left:35px;
+    margin-bottom:10rem;
+}
+.about-item {
+    border:1px solid rgb(239, 201, 201);
+    border-radius:20px;
+    word-spacing:10px;
+    line-height:1.5rem;
+    width:30rem;
+    padding:2rem;
+    padding-bottom:1rem;
+}
+.img-list {
+    width:1rem;
+    position:relative;
+    top:5px;
+    margin-left:3px;
+}
+@property --fill{
+    syntax:'<percentage>';
+    inherits:true;
+    initial-value:0%;
+}
+@property --col{
+    syntax:'<color>';
+    inherits:true;
+    initial-value:white;
+}
+.contact-button-base{
+    cursor:pointer;
+    border-radius:10px;
+    height:2rem;
+    transition:--fill 0.5s ease-out;
+    background-image:conic-gradient(rgb(196, 40, 40) var(--fill),transparent var(--fill));
+    text-wrap:nowrap;
+    overflow:hidden;
+    width:0;
+    padding:0;
+    animation:size-it 0.5s ease-out 4s 1 forwards,
+    load-it 0.5s ease-out 5s 1 forwards
+}
+.contact-button-txt {
+    position:relative;
+    top:5px;
+    right:10px;
+    background-color:rgb(43, 42, 51);
+    border-radius:inherit;
+    color:var(--col);
+    padding:1rem 2rem;
+    text-wrap:nowrap;
+}
+@keyframes size-it {
+    to {
+        padding:0.7rem;
+        width:8rem;
+    }
+}
+@keyframes load-it {
+    to {
+    --fill:100%;
+    --col:red
+    }
+}
+.exp-grid {
+    display:grid;
+    grid-template-columns:repeat(3,15rem);
+    gap:11rem;
+    position:relative;
+    left:35px;
+}
+.exp-item {
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    border:1px solid rgb(239, 201, 201);
+    border-radius:20px;
+    word-spacing:10px;
+    line-height:2rem;
+    width:20rem;
+    padding:2rem;
+    padding-bottom:1rem;
+}
+.exp-container {
+    background-color:rgb(56, 55, 66);
+    position: relative;
+    padding-top:4rem;
+    bottom:4.4rem;
+}
+.exp-wave {
+    position:relative;
+    bottom:14.4rem;
+}
+.red-txt {
+    color:rgb(239, 205, 205)
+}
+.img-micro {
+    position:relative;
+    left:5rem;
+    width:10rem
+}
+.img-net {
+    position: relative;
+    left:5rem;
+    width:8rem;
+    bottom:1rem;
+}
+.img-google {
+    position:relative;
+    left:5rem;
+    width:10rem
+}
+.project-grid {
+    display:grid;
+    grid-template-columns:30rem 5rem;
+    gap:9rem;
+    position: relative;
+    left:35px;
+    margin-bottom:3rem
+}
+.project-list {
+    line-height:1rem;
+}
+.project-list > li {
+    padding:0.5rem
+}
+.project-list > li:hover {
+    border-radius:10px;
+    padding-left:20px;
+    background-color:rgb(31, 31, 31);
+}
+.project-list > .list-1:hover + div::after{
+    content:"This is a perfume website";
+}
+.project-list > .list-2:hover + div::after{
+    content:"This is a grade metrics app for schools"
+}
+.project-list > .list-3:hover + div::after{
+    content:"A calculator website"
+}
+.list-1 {color:white}
+.list-2 {color:white}
+.list-3{color:white}
+
+.project-details-1 {
+    position: relative;
+    left:37.5rem;
+    bottom:4rem;
+    z-index:0;
+}
+.project-details-2 {
+    position: relative;
+    left:37.5rem;
+    bottom:7rem;
+    z-index:1;
+}
+.project-details-3 {
+    position: relative;
+    left:37.5rem;
+    bottom:10rem;
+    z-index:2;
+}
+.description-box {
+    border:1px solid rgb(239, 201, 201);
+    border-radius:10px;
+    padding-left:20px;
+    padding-top:10px;
+    width:35rem
+}
+.github-img {
+    z-index:0;
+    background-color:white;
+    padding-left:150px;
+    padding-right:40px;
+    border-radius:10px;
+    position:relative;
+    top:9px;
+    width:2rem
+}
+.github-txt {
+    color:black;
+    position: relative;
+    left:9rem;
+    z-index:1
+}
+.github-button {
+    position:relative;
+    top:10rem;
+    right:9rem;
+}
+.contact-container {
+    padding-top:0.5rem;
+    background-color:rgb(56, 55, 66);
+}
+.contact-txt {
+    position: relative;
+    left:33px
+}
+.contact-flex {
+    display:flex;
+    flex-direction:row;
+    flex-basis:20rem;
+    position:relative;
+    margin-top:20px;
+    left:28px
+}
+.contact-img {
+    padding:1rem;
+    width:2rem;
+    border:1px solid rgb(239, 201, 201);
+    border-radius:20px;
+    margin-right:1rem
+}
+.contact-input {
+    width:8rem;
+    height:1.5rem;
+    border:2px solid rgb(239, 201, 201);
+    border-radius:5px;
+    margin-right:25px;
+    font-family:Consolas;
+}
+.contact-flex-2 {
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    position:relative;
+    left:35rem;
+    bottom:7.8rem
+}
+.contact-msg {
+    width:24.5rem;
+    height:6rem;
+    border:2px solid rgb(239, 201, 201);
+    border-radius:5px;
+}
+.footer-container {
+    gap:4rem;
+    background-color:rgb(43, 42, 51);
+    position: relative;
+    bottom:5rem;
+    height:10rem;
+    font-family: Consolas
+}
+.footer-logo {
+    position:relative;
+    left:30px;
+    top:25px
+}
+.footer-logo-txt {
+    position: relative;
+    bottom:8px
+}
+.footer-header-txt {
+    position: relative;
+    margin-top:4rem;
+    left:30px;
+}
+.contact-flex-3 {
+    display:flex;
+    flex-direction:row;
+    gap:30px;
+    position: relative;
+    left:5px
+}
+.footer-flex {
+    display:flex;
+    gap:2rem
+}
+/**FONT STYLES*/
+.exo-font {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  text-decoration: none;
+}
+.exo-font-hero{
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:600;
+  text-decoration: none;
+  font-size:50px;
+}
+.exo-font-par {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  text-decoration: none;
+  font-size:20px;
+}
+.exo-font-nav{
+  font-family:Arial;
+  font-weight:bold;
+  font-size:18px;
+  color:rgb(239, 201, 201);
+  padding-right:20px;
+}
+.exo-font-heading {
+  font-family: "Exo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  text-decoration:underline;
+  position: relative;
+  left:35px;
+}
+.type-big{
+    text-wrap:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:type-it-big 2s steps(30) 0s 1 forwards,
+    blink-it-big 0.8s step-end 3;
+}
+@keyframes type-it-big {
+    to {
+        width:20rem
+    }
+}
+@keyframes blink-it-big {
+    50% {
+        border-right:3px solid red;
+    }
+}
+.type{
+    text-wrap:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:type-it 2s steps(30) 2s 1 forwards,
+    blink-it 0.8s step-end 3;
+}
+@keyframes type-it {
+    to {
+        width:40rem
+    }
+}
+@keyframes blink-it {
+    50% {
+        border-right:3px solid red;
+    }
+}
+
+
